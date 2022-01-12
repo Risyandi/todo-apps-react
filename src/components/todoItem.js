@@ -19,7 +19,12 @@ const TodoItem = ({item, index, deleteTodoItem, completeTodoItem, updateTodoItem
                         <Button rounded color="success" onClick={() => completeTodoItem(index)}>Undone</Button>
                     }
                     <Button rounded color="primary" onClick={() => updateTodoItem(index)}>Update</Button>
-                    <Button rounded color="danger" onClick={() => deleteTodoItem(index)}>Delete</Button>
+                    {
+                        item.status !== 1 ? 
+                        <Button rounded color="danger" onClick={() => deleteTodoItem(index)}>Delete</Button>
+                        : 
+                        ''
+                    }
                 </Button.Group>
             </Box>
         </Container>
