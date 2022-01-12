@@ -17,7 +17,7 @@ const TodoInput = ({createTodoItem}) => {
     }
 
     return (
-    <Container fullhd breakpoint={'fluid'}>
+    <Container fullhd breakpoint={'fluid'} style={{marginTop: '10px'}}>
         <Box style={{margin: 'auto'}}>
             <Heading subtitle>
                 Todo Application
