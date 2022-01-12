@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import 'bulma/css/bulma.min.css';
+import { Container } from 'react-bulma-components';
 import TodoInput from "./components/todoInput";
 import TodoItem from "./components/todoItem";
 
@@ -77,23 +79,25 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <TodoInput createTodoItem={createTodoItem}/>
-      {
-        todoItems.map((item, index) => {
-          return (
-            <TodoItem 
-            key={index} 
-            index={index} 
-            item={item} 
-            deleteTodoItem={deleteTodoItem} 
-            completeTodoItem={completeTodoItem}
-            updateTodoItem={updateTodoItem}
-            />
-            )
-        })
-      }
-    </div>
+     <Container fullhd breakpoint={'fluid'}>
+      <div className="app">
+        <TodoInput createTodoItem={createTodoItem}/>
+        {
+          todoItems.map((item, index) => {
+            return (
+              <TodoItem 
+              key={index} 
+              index={index} 
+              item={item} 
+              deleteTodoItem={deleteTodoItem} 
+              completeTodoItem={completeTodoItem}
+              updateTodoItem={updateTodoItem}
+              />
+              )
+          })
+        }
+      </div>
+     </Container>
   );
 }
 
