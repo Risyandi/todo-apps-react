@@ -65,7 +65,8 @@ function App() {
     let todoObj = {
       title: newTitle,
       description: newDesc,
-      status: 0
+      status: 0,
+      createdAt : new Date(),
     };
 
     newTodoItems.splice(index, 1, todoObj);

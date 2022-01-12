@@ -3,13 +3,14 @@ import 'bulma/css/bulma.min.css';
 import {Container, Box, Button} from 'react-bulma-components';
 
 const TodoItem = ({item, index, deleteTodoItem, completeTodoItem, updateTodoItem}) => {
+
     return (
         <Container fullhd breakpoint={'fluid'} style={{marginTop: '10px'}}>
             <Box style={{margin: 'auto'}}>
                 <div style={{textDecoration: item.status !== 0 ? "line-through" : ""}}>
                     <p className='item-title'>{item.title}</p>
                     <p className='item-desc'>{item.description}</p>
-                    <p className='item-create-date'>{item.createdAt}</p>
+                    <p className='item-create-date'>{item.createdAt.toString()}</p>
                 </div>
                 <Button.Group>
                     {
