@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import 'bulma/css/bulma.min.css';
-// import {Form, Button} from 'react-bulma-components';
+import {Container, Box, Form, Button, Heading} from 'react-bulma-components';
 
 const TodoInput = ({createTodoItem}) => {
     const [valueTitle, setValueTitle] = useState('');
@@ -17,38 +17,40 @@ const TodoInput = ({createTodoItem}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+    <Container fullhd breakpoint={'fluid'}>
+        <Box style={{margin: 'auto'}}>
+            <Heading subtitle>
+                Todo Application
+            </Heading>
+            <Form.Control onSubmit={handleSubmit}>
+                <Form.Field >
+                    <Form.Control>
+                        <Form.Input 
+                        placeholder="Title" 
+                        type="text"
+                        value={valueTitle}
+                        onChange={(e) => setValueTitle(e.target.value)}
+                        />
+                    </Form.Control>
+                </Form.Field>
 
-            {/* <Form.Field >
-                <Form.Control>
-                    <Form.Input placeholder="Title" />
-                </Form.Control>
-            </Form.Field>
+                <Form.Field>
+                    <Form.Control>
+                        <Form.Textarea 
+                        placeholder="Description"
+                        type="text" 
+                        value={valueDesc}
+                        onChange={(e) => setValueDesc(e.target.value)}
+                        />
+                    </Form.Control>
+                </Form.Field>
 
-            <Form.Field>
-                <Form.Control>
-                    <Form.Textarea placeholder="Description" />
-                </Form.Control>
-            </Form.Field>
-
-            <Button.Group>
-                <Button fullwidth rounded color="primary">Create</Button>
-            </Button.Group> */}
-
-            <input
-            type="text"
-            placeholder="Title"
-            value={valueTitle}
-            onChange={(e) => setValueTitle(e.target.value)}
-            />
-            <input
-            type="text"
-            placeholder="Description"
-            value={valueDesc}
-            onChange={(e) => setValueDesc(e.target.value)}
-            />
-            <button onClick={handleSubmit}>Create</button>
-        </form>
+                <Button.Group>
+                    <Button fullwidth rounded color="primary" onClick={handleSubmit}>Create</Button>
+                </Button.Group>
+            </Form.Control>
+        </Box>
+    </Container>
     )
 }
 
