@@ -15,3 +15,5 @@ and for the result will be appear like these
 (image: process update, delete and done your todo task)
 ![todo application](./docs/todo-apps-2.gif)
 (image: process input todo task)
+![todo application](./docs/todo-apps-3.gif)
+(image: show modal if input empty)
